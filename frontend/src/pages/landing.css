@@ -1,0 +1,30 @@
+.landing {
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(90, 4%, 11%, 0.534);
+    position: relative;
+}
+
+.landing__welcome {
+    width: 100%;
+    height: 80vh; 
+}
+.landing__welcome img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.landing__tourism {
+    width: 100%;
+    height: 40vh; 
+    padding: 3rem;
+    background-color: aliceblue;
+}
+
+.separator {
+    border-top: 1px solid rgb(43, 43, 43);
+}
