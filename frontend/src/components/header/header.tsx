@@ -1,10 +1,10 @@
 import './header.css';
-import menuIcon from '../assets/icons/menu.svg';
-import logoClub from '../assets/logos/logo-club-color.svg';
-import search from '../assets/icons/search.svg';
-import notification from '../assets/icons/notification.svg';
-import heart from '../assets/icons/heart.svg';
-import smilingFace from '../assets/icons/smiling-face.svg';
+import menuIcon from '../../assets/icons/menu.svg';
+import logoClub from '../../assets/logos/logo-club-color.svg';
+import search from '../../assets/icons/search.svg';
+import notification from '../../assets/icons/notification.svg';
+import heart from '../../assets/icons/heart.svg';
+import smilingFace from '../../assets/icons/smiling-face.svg';
 
 const Header = () => {
   return (

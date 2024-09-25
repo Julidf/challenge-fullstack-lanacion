@@ -1,0 +1,21 @@
+
+.arrow-button {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    color: grey;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.arrow-button:disabled{
+    cursor: default;
+}
+
+.arrow-right {
+    transform: rotate(180deg);
+}

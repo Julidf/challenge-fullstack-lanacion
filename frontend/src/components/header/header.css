@@ -9,7 +9,7 @@
 .header__container {
     padding: 0 4vw;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     height: 100%;
 }
@@ -29,6 +29,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.header__search-input, .header__location-input {
+    padding: 0.8rem;
+    width: 45%;
+    height: 2.2rem;
+    background: none;
+    border: 1px solid white;
+    outline: none;
+    color: white;
+}
+.header__search-input {
+    border-bottom-left-radius: 20px ;
+    border-top-left-radius: 20px ;
+}
+.header__location-input {
+    border-bottom-right-radius: 20px ;
+    border-top-right-radius: 20px ;
 }
 
 .header__search {
