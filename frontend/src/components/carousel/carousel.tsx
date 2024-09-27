@@ -8,22 +8,22 @@ interface CarouselProps {
   data: CardProps[];
   error: string | null;
   totalItems: number;
+  fetchNextPage: () => void;
 }
 
-const Carousel = ({ data, error, totalItems }: CarouselProps) => {
+const Carousel = ({ data, error, totalItems, fetchNextPage }: CarouselProps) => {
   const [currentPage, setCurrentPage] = useState<number>(0);
-  const cardsPerPage = 4;
 
+  const cardsPerPage = 4;
   const totalPages = Math.ceil(totalItems / cardsPerPage);
 
-  //TO DO
   const handleNext = () => {
     if (currentPage < totalPages - 1) {
       setCurrentPage(currentPage + 1);
+      fetchNextPage();
     }
   };
 
-  //TO DO
   const handlePrev = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
@@ -40,8 +40,8 @@ const Carousel = ({ data, error, totalItems }: CarouselProps) => {
           ))}
         </div>
       :
-        <div>
-          <span>Error loading data</span>
+        <div className='carousel__error'>
+          <span>Error loading data...</span>
         </div>}
       <ArrowButton onClick={handleNext} disabled={currentPage === totalPages - 1} className='arrow-right'/>
     </div>

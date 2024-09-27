@@ -2,7 +2,7 @@ const tourismService = require('../services/tourism-service');
 
 exports.getTourismAccounts = async (req, res) => {
     try {        
-        let { lastIndex = 0 } = req.query;
+        let { offset = 0 } = req.query;
         const tags = "Turismo en Buenos Aires"
         const limit = 4;
     
@@ -16,7 +16,7 @@ exports.getTourismAccounts = async (req, res) => {
     
         const totalAccounts = sortedAccounts.length;
     
-        const accountsSliced = sortedAccounts.slice(lastIndex, lastIndex + limit);
+        const accountsSliced = sortedAccounts.slice(offset, offset + limit);
 
         const accountsToReturn = tourismService.formatAccountResponse(accountsSliced);
     

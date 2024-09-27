@@ -38,27 +38,26 @@ a {
 }
 
 .card__title {
+    height: 75%;
+}
+.card__title--h4 {
     margin-top: 2px;
 }
 
 .card__benefits {
     margin-top: 5px;
     font-weight: 600;
-    /* font-size: 1.2rem; */
 }
-
 .card__benefits--a {
     padding-right: 6px;
     color: #000038;
     border-right: 1px solid rgba(128, 128, 128, 0.2);
 }
-
 .card__benefits--b {
     padding-inline: 6px;
     color: #092BAB;
     border-right: 1px solid rgba(128, 128, 128, 0.2);
 }
-
 .card__benefits--c {
     padding-inline: 6px;
     color: #0075FF;
@@ -78,6 +77,6 @@ a {
 }
 
 .card__button {
-    margin-top: 15px;
+    height: 25%;
 }
 

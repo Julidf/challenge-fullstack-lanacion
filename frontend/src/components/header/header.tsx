@@ -17,7 +17,7 @@ const Header = () => {
         <div className='header__center'>
           <input type='text' placeholder='Busca un comercio...' className='header__search-input' />
           <input type='text' placeholder='Ingresa una ubicación...' className='header__location-input' />
-          <div className='header__search'>
+          <div className='header__search-button'>
             <img src={search} alt='search'/>
           </div>
         </div>
