@@ -18,13 +18,16 @@ const Card: React.FC<{ card: CardProps }> = ({ card }) => {
                 <div className="card__data" id='card__data--tourism'>
                     <h4 className='card__title--h4'><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></h4>
                     <div className='card__benefits'>
-                        <span className='card__benefits--a'>{benefits.Black}</span>  
-                        <span className='card__benefits--b'>{benefits.Premium}</span>
-                        <span className='card__benefits--c'>{benefits.Classic}</span>
+                        {/* {(Object.keys(benefits) as Array<keyof typeof benefits>).map((key) => {
+                            if (benefits[key]) return <span key={key} className={`card__benefits--${key.toLowerCase()}`}>{benefits[key]}</span>
+                        })} */}
+                        <span className='card__benefits--black'>{benefits.Black}</span>  
+                        <span className='card__benefits--premium'>{benefits.Premium}</span>
+                        <span className='card__benefits--classic'>{benefits.Classic}</span>
                     </div>
                     <div className='card__location'>
                         <img src={location} />
-                        <span> A <strong>{closestLocation > 1000 ? `${(closestLocation / 1000).toFixed(2)} km` : `${closestLocation} m`}</strong></span>
+                        <span> A <strong>{closestLocation && closestLocation > 1000 ? `${(closestLocation / 1000).toFixed(2)} km` : `${closestLocation} m`}</strong></span>
                     </div>
                 </div> 
                 :

@@ -1,13 +1,14 @@
 import axios from 'axios';
+import { CardProps } from './types';
 
 const API_URL: string = "http://localhost:8000";
 const TOURISM_ENDPOINT: string = "/api/tourism"
 const DISCOUNT_CODES: string = "/api/discount-codes"
 
-// interface GetCardDataResponse {
-//     data: any[];
-//     total: number;
-// }
+interface GetCardDataResponse {
+    data: CardProps[];
+    total: number;
+}
 
 interface GetCardDataProps {
     offset?: number;
@@ -26,8 +27,8 @@ export const getCardData = async ({ offset, id }: GetCardDataProps) => {
     if (offset) URL += `?offset=${offset}`;
 
     try {
-        const response = await axios.get(URL);
-        console.log(response.data)
+        const response = await axios.get<GetCardDataResponse>(URL);
+        console.log(response.data);
         return response.data;
     } catch (error) {
         console.log('Error fetching data:', error);

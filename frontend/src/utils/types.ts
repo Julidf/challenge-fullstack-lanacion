@@ -1,11 +1,11 @@
 export interface CardProps {
     name: string;
-    benefits: {
+    benefits?: {
       Classic: number;
       Premium: number;
       Black: number;
     };
     image: string;
     url: string;
-    closestLocation: number;
+    closestLocation?: number;
 }

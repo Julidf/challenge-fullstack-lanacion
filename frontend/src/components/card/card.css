@@ -1,6 +1,7 @@
 .card {
     height: 40vh;
     width: 100%;
+    /* max-width: 17vw; */
     border: 1px solid rgba(69, 69, 69, 0.13);
     color: var(--secundary-text-color);
     font-family: Arial;
@@ -8,6 +9,10 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.1s ease-in-out;
 }
 
 a {
@@ -31,6 +36,11 @@ a {
     width: 100%;
     height: 40%;
     padding: 1rem;
+    overflow-y: scroll; 
+    scrollbar-width: none;
+}
+.card__data::-webkit-scrollbar {
+    display: none; 
 }
 .card__data#card__data--discount-codes {
     color: white;
@@ -40,25 +50,22 @@ a {
 .card__title {
     height: 75%;
 }
-.card__title--h4 {
-    margin-top: 2px;
-}
 
 .card__benefits {
     margin-top: 5px;
     font-weight: 600;
 }
-.card__benefits--a {
+.card__benefits--black {
     padding-right: 6px;
     color: #000038;
     border-right: 1px solid rgba(128, 128, 128, 0.2);
 }
-.card__benefits--b {
+.card__benefits--premium {
     padding-inline: 6px;
     color: #092BAB;
     border-right: 1px solid rgba(128, 128, 128, 0.2);
 }
-.card__benefits--c {
+.card__benefits--classic {
     padding-inline: 6px;
     color: #0075FF;
 }

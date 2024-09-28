@@ -16,7 +16,12 @@ const sortAccountsByLocation = (accounts) => {
 };
 
 //TO DO
-const calculateBenefits = (account) => {
+const calculateBenefit = (account) => {
+    // const benefits = {
+    //     Classic: calculateHigherBenefit(account, "Classic"),
+    //     Premium: calculateHigherBenefit(account, "Premium"),
+    //     Black: calculateHigherBenefit(account, "Black"),
+    // };
     const benefits = {
         Classic: "10%",
         Premium: "15%",
@@ -25,13 +30,23 @@ const calculateBenefits = (account) => {
     return benefits
 };
 
+const calculateHigherBenefit = (account, program_name) => {
+    if (account.benefits?.find(benefit => benefit.program_name[0].includes(program_name))) {
+        const benefitsTypeArray = account.benefits.map(benefit => parseFloat(benefit.type))
+        const higherBenefit = Math.max(...benefitsTypeArray);
+        return higherBenefit.toString().concat("%")
+    } else {
+        return null;
+    }
+}
+
 const formatAccountResponse = (accounts) => {
     return accounts.map(account => {
         return {
             name: account.name,
             image: account.images[0]?.url || null,
             url: `${LA_NACION_URL}${account.crmid}`,
-            benefits: calculateBenefits(account),
+            benefits: calculateBenefit(account),
             closestLocation: Math.min(...account.branches.map(branch => branch.location))
         };
     });
@@ -40,6 +55,6 @@ const formatAccountResponse = (accounts) => {
 module.exports = {
     filterAccountsByTags,
     sortAccountsByLocation,
-    calculateBenefits,
+    calculateBenefit,
     formatAccountResponse
 };

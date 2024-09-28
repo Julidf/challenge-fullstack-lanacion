@@ -1,14 +1,17 @@
 .carousel {
     display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .carousel__items {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
     margin: 2rem;
-    gap: 2rem;
+    gap: 30px;
 }
 
 .carousel__error {
@@ -21,4 +24,8 @@
         margin: 1rem;
         gap: 1rem;
     }
+}
+
+.card {
+    transition: transform 0.3s ease; /* Add transition for smooth movement */
 }
