@@ -1,6 +1,6 @@
-const tourismService = require('../services/tourism-service');
+import * as tourismService from '../services/tourism-service.js';
 
-exports.getTourismAccounts = async (req, res) => {
+const getTourismAccounts = async (req, res) => {
     try {        
         let { offset = 0 } = req.query;
         const tags = "Turismo en Buenos Aires"
@@ -30,3 +30,5 @@ exports.getTourismAccounts = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
+export default { getTourismAccounts } ;

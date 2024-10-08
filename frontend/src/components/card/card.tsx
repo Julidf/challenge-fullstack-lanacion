@@ -1,4 +1,3 @@
-// import { Children } from 'react';
 import location from '../../assets/icons/location.svg';
 import { CardProps } from '../../utils/types'
 import '../card/card.css'
@@ -11,16 +10,10 @@ const Card: React.FC<{ card: CardProps }> = ({ card }) => {
             <div className="card__image">
                 <a href={url} target="_blank" rel="noopener noreferrer"><img src={image} alt='Photo'/></a>
             </div>
-            {/* <div className="card__data">
-                {Children}
-            </div> */}
             {benefits ? 
                 <div className="card__data" id='card__data--tourism'>
                     <h4 className='card__title--h4'><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></h4>
                     <div className='card__benefits'>
-                        {/* {(Object.keys(benefits) as Array<keyof typeof benefits>).map((key) => {
-                            if (benefits[key]) return <span key={key} className={`card__benefits--${key.toLowerCase()}`}>{benefits[key]}</span>
-                        })} */}
                         <span className='card__benefits--black'>{benefits.Black}</span>  
                         <span className='card__benefits--premium'>{benefits.Premium}</span>
                         <span className='card__benefits--classic'>{benefits.Classic}</span>

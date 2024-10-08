@@ -1,6 +1,6 @@
-const discountCodesService = require('../services/discount-codes-service');
+import * as discountCodesService from '../services/discount-codes-service.js';
 
-exports.getDiscountCodesAccounts = async (req, res) => {
+const getDiscountCodesAccounts = async (req, res) => {
     try {        
         let { offset = 0 } = req.query;
         const haveVoucher = true;
@@ -29,3 +29,5 @@ exports.getDiscountCodesAccounts = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
+export default { getDiscountCodesAccounts };

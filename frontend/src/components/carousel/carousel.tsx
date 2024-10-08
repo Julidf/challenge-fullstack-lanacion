@@ -21,17 +21,19 @@ const Carousel = ({ id }: CarouselProps) => {
 
   useEffect(() => {
     getCardData({id})
-      .then((items) => {setData(items.data); setTotalItems(items.total)})
+      .then((items) => {
+        setData(items.data); 
+        setTotalItems(items.total)
+      })
       .catch((err) => setError(err.message));
   }, [id]);
 
   const fetchNextPage = async () => {
-    try {
-      const nextPageData = await getCardData({id, offset: data.length});
-      setData([...data, ...nextPageData.data]);
-    } catch (error) {
-      setError((error as Error).message);
-    }
+    getCardData({id, offset: data.length})
+      .then((response) => {
+        setData([...data, ...response.data]);
+      })
+      .catch((err) => setError(err.message));
   };
 
   const handleNext = () => {

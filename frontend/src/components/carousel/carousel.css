@@ -27,5 +27,5 @@
 }
 
 .card {
-    transition: transform 0.3s ease; /* Add transition for smooth movement */
+    transition: transform 0.3s ease;
 }

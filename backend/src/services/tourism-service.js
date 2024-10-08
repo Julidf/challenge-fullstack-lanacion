@@ -1,5 +1,5 @@
-const accounts = require('../../data/accounts.json');
-const LA_NACION_URL = require('../utils/constants').LA_NACION_URL;
+import accounts from '../../data/accounts.json' assert { type: "json" };
+import { LA_NACION_URL } from '../utils/constants.js';
 
 const filterAccountsByTags = (tags) => {
     return accounts.accounts.filter(account => {
@@ -52,9 +52,4 @@ const formatAccountResponse = (accounts) => {
     });
 };
 
-module.exports = {
-    filterAccountsByTags,
-    sortAccountsByLocation,
-    calculateBenefit,
-    formatAccountResponse
-};
+export { filterAccountsByTags, sortAccountsByLocation, calculateBenefit, formatAccountResponse };

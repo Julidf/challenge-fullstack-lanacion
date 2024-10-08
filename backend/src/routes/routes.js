@@ -1,9 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const tourismController = require('../controllers/tourism-controller');
-const discountCodesController = require('../controllers/discount-codes-controller');
+import { Router } from 'express';
+import tourismController from '../controllers/tourism-controller.js';
+import discountCodesController from '../controllers/discount-codes-controller.js';
+
+const router = Router();
 
 router.get('/tourism', tourismController.getTourismAccounts);
 router.get('/discount-codes', discountCodesController.getDiscountCodesAccounts);
 
-module.exports = router;
+export default router;
